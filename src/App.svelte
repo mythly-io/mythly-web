@@ -4,11 +4,11 @@
 
 	const getData = () => {
 		isTrue = !isTrue;
-	}; 
+	};
 </script>
 
 <div>
-	<Header/>
+	<Header />
 	{#if isTrue}
 		<p>Click and I disappear</p>
 	{/if}
@@ -17,5 +17,4 @@
 </div>
 
 <style>
-	
 </style>

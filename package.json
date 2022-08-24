@@ -2,15 +2,14 @@
   "name": "web",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type": "module",
   "scripts": {
-    "build": "node scripts/build.js",
+    "build": "ts-node configs/esbuild.config.ts",
     "build:watch": "npm run build --mode watch",
     "lint": "eslint './**' --ext .ts,.svelte --fix",
     "format": "prettier --write './**'",
+    "clean": "npm run lint && npm run format",
     "serve": "http-server ./build/public -c-1",
-    "test": ""
+    "test": "npx playwright test tests/ --config configs/playwright.config.ts --reporter=line"
   },
   "author": "Steve Giordano",
   "license": "ISC",
@@ -26,6 +25,7 @@
     "svelte-preprocess": "^4.10.7"
   },
   "devDependencies": {
+    "@playwright/test": "^1.25.0",
     "@tsconfig/svelte": "^3.0.0",
     "@types/node": "^18.7.8",
     "@types/postcss-preset-env": "^7.7.0",
@@ -107,10 +107,5 @@
     "bracketSameLine": true,
     "arrowParens": "always",
     "useTabs": true
-  },
-  "stylelint": {
-    "rules": {
-      "color-no-invalid-hex": true
-    }
   }
 }

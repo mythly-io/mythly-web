@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"module": "esnext",
+		"module": "commonjs",
 		"lib": ["DOM", "ES2021"],
 		"importsNotUsedAsValues": "error",
 		"esModuleInterop": true,
